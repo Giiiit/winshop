@@ -1,0 +1,153 @@
+<div id="modal_addContract">
+    <form>
+        <table>
+            <thead>
+            <!--<button type="button"-->
+            <!--style="color: #727e8a; margin-top: -10px;">-->
+            <!--<span class="fa fa-close"></span>-->
+            <!--</button>-->
+                <div id="myModalLabel2">
+                    <p style="font-size: 16px;">
+                        添加合同
+                    </p>
+                </div>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="tab_head">客户：</td>
+                    <td>
+                        <!--<input type="text" required="required" ng-model="add_customer">-->
+                        <select  ng-model="customerId" ng-change="changefactory(customerId)">
+                            <option ng-repeat="option in get_allcustomer" value="{{option.id}}" ng-bind="option.name"></option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_head">业务员：</td>
+                    <td>
+                        <!--<input type="text" required="required" ng-model="add_seller">-->
+
+                        <select ng-model="salesmanId" ng-change="changefactory(salesmanId)">
+                            <option ng-repeat="option in salesman_list" value="{{option.id}}">
+                                {{option.name}}
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_head">选择账号：</td>
+                    <td>
+                        <!--<input type="text" required="required" ng-model="add_account">-->
+
+                        <select ng-model="accountId" ng-change="changefactory(accountId)">
+                            <option ng-repeat="option in account_list" value="{{option.id}}">
+                                {{option.name}}
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_head">合同金额：</td>
+                    <td><input type="text" required="required" ng-model="quotedMoney"></td>
+                </tr>
+                <tr>
+                    <td class="tab_head">定金：</td>
+                    <td><input type="text" required="required" ng-model="bookMoney"></td>
+                </tr>
+            </tbody>
+
+            <!--<tfoot>-->
+
+            <!--</tfoot>-->
+        </table>
+        <div class="addBtn">
+            <input type="submit" ng-click="add_contract(customerId,salesmanId,accountId,quotedMoney,bookMoney)" class="btn" value="添加订单"/>
+        </div>
+    </form>
+
+</div>
+
+
+
+
+<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog"-->
+<!--aria-labelledby="myModalLabel" aria-hidden="true">-->
+<!--<div class="modal-dialog add_modal">-->
+<!--<div class="modal-content">-->
+<!--<div class="modal-header">-->
+<!--<button type="button" class="close"-->
+<!--data-dismiss="modal" aria-hidden="true"  style="color: #727e8a; margin-top: -10px;">-->
+<!--<span class="fa fa-close"></span>-->
+<!--</button>-->
+<!--<p class="modal-title" id="myModalLabel" style="font-size: 16px; margin-top: -10px;">-->
+<!--添加合同-->
+<!--</p>-->
+<!--</div>-->
+<!--<form id="addContract" class="modal-body">-->
+<!--<table>-->
+<!--<tr>-->
+<!--<td class="tab_head">客户：</td>-->
+<!--<td>-->
+<!--&lt;!&ndash;<input type="text" required="required" ng-model="add_customer">&ndash;&gt;-->
+<!--<select class="form-control" ng-model="customerId" ng-change="changefactory(customerId)">-->
+<!--<option ng-repeat="option in customer_list" value="{{option.id}}">-->
+<!--{{option.name}}-->
+<!--</option>-->
+<!--</select>-->
+
+<!--</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="tab_head">业务员：</td>-->
+<!--<td>-->
+<!--&lt;!&ndash;<input type="text" required="required" ng-model="add_seller">&ndash;&gt;-->
+
+<!--<select class="form-control" ng-model="salesmanId" ng-change="changefactory(salesmanId)">-->
+<!--<option ng-repeat="option in salesman_list" value="{{option.id}}">-->
+<!--{{option.name}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="tab_head">选择账号：</td>-->
+<!--<td>-->
+<!--&lt;!&ndash;<input type="text" required="required" ng-model="add_account">&ndash;&gt;-->
+
+<!--<select class="form-control" ng-model="accountId" ng-change="changefactory(accountId)">-->
+<!--<option ng-repeat="option in account_list" value="{{option.id}}">-->
+<!--{{option.name}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="tab_head">合同金额：</td>-->
+<!--<td><input type="text" required="required" ng-model="quotedMoney"></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="tab_head">收入：</td>-->
+<!--<td><input type="text" required="required" ng-model="income"></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="tab_head">支出：</td>-->
+<!--<td><input type="text" required="required" ng-model="expense"></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="tab_head">定金：</td>-->
+<!--<td><input type="text" required="required" ng-model="bookMoney"></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="tab_head">交易科目：</td>-->
+<!--<td><input type="text" required="required"></td>-->
+<!--</tr>-->
+<!--</table>-->
+<!--<div class="modal-footer">-->
+<!--<input type="submit" ng-click="add_contract(customerId,salesmanId,accountId,quotedMoney,income,expense,bookMoney)" class="btn" value="添加合同"/>-->
+<!--</div>-->
+<!--</form>-->
+<!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+<!--</div>-->

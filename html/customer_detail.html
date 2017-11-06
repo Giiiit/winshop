@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../styles/lib/bootstrap.css"/>
+    <link rel="stylesheet" href="../styles/lib/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../styles/define/define_param.css"/>
+    <link rel="stylesheet" href="../styles/define/navbar.css"/>
+    <link rel="stylesheet" href="../styles/define/contract_list.css"/>
+    <link rel="stylesheet" href="../styles/define/customer_detail.css"/>
+    <link rel="stylesheet" href="../styles/define/contract_detail.css"/>
+    <link rel="stylesheet" href="../styles/define/breadcrumb.css"/>
+    <script src="../js/lib/angular.js"></script>
+    <script src="../js/lib/angular-route.min.js"></script>
+    <script src="../js/lib/ui-bootstrap-tpls.js"></script>
+    <script src="../js/lib/angular-cookies.js"></script>
+    <script src="../js/controllers/customerList.js"></script>
+    <script src="../js/controllers/customerDetail.js"></script>
+    <script src="../js/service/configure.js"></script>
+    <script src="../js/service/customer.js"></script>
+    <script src="../js/service/contract.js"></script>
+    <script src="../js/service/login.js"></script>
+    <!--<script src="../js/controllers/ModalAddFollowStatus.js"></script>-->
+    <title>直赢店</title>
+</head>
+<body ng-app="customerDetail"  ng-controller="customerDetailController">
+<nav class="navbar" role="navigation">
+    <div id="nav-content">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand"><img src="../images/logo2.png" alt="直赢店"></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <!--<li><a href="contract_list.html"><img src="" alt="">合同</a></li>-->
+                <!--<li><a href="customer_list.html" id="thisclass"><img src="" alt="">客户</a></li>-->
+                <!--<li><a href="finance_list.html"><img src="" alt="">财务</a></li>-->
+                <!--<li><a href="clock.html"><img src="" alt="">闹钟</a></li>-->
+
+                <li><a href="customer_list.html"><span id="thisclass" class="fa fa-users">&nbsp;客户</span></a></li>
+                <li><a href="contract_list.html"><span class="fa fa-clipboard">&nbsp;订单</span></a></li>
+                <li><a href="finance_list.html"><span class="fa fa-cny">&nbsp;财务</span></a></li>
+                <li class="logout"><a ng-click="loginOut()"><span class="fa fa-user">&nbsp;退出</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+    <!--面包屑导航-->
+    <div class="bread-content">
+        <ol class="breadcrumb">
+            当前位置：
+            <li class="active">客户</li>
+            <li><a>客户详情</a></li>
+
+            <div id="add-followStatus">
+                <a class="add_link" ng-click="add_followStatus()">+&nbsp;添加跟单记录</a>
+            </div>
+        </ol>
+    </div>
+    <div>
+        <div class="container-fluid">
+            <table class="table" id="cus_table"  >
+                <tr>
+                    <td class="tdName2 time">客户：</td>
+                    <td class="tdValue2" ng-bind="customer.name"></td>
+                    <td class="tdName2 time">业务员：</td>
+                    <td class="tdValue2" ng-bind="customer.salesmanName"></td>
+                </tr>
+                <tr>
+                    <td class="tdName2 time">总金额：</td>
+                    <td class="tdValue2 red" ng-bind="'￥'+customer.totalQuotedMoney"></td>
+                    <td class="tdName2 time">总收入：</td>
+                    <td class="tdValue2 red" ng-bind="'￥'+customer.totalIncome"></td>
+                </tr>
+                <tr>
+                    <td class="tdName2 time">总欠款：</td>
+                    <td class="tdValue2 green" ng-bind="'￥'+customer.totalDebt"></td>
+                </tr>
+                <tr>
+                    <td class="tdName2 time">备注：</td>
+                    <td class="tdValue2" ng-bind="customer.remark"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <div id="menu">
+                <ul class="tabs">
+                    <li>
+                        <input type="radio" name="tabs" id="tab1" checked />
+                        <label for="tab1">订单</label>
+                        <div id="tab-content1" class="tab-content">
+                            <div class="container-fluid" id="content1" ng-init="myVar = 'contract_detail.html'">
+                                <table class="table1"  id="contract_tab2" ng-repeat="cusInfo in cusInfo_List">
+                                    <tr>
+                                        <td class="tdName3" rowspan="4">
+                                            <div class="img-container">
+                                                <div >
+                                                        <img src="{{picUrl}}" ng-repeat="picUrl in cusInfo.picUrlAry track by $index"/>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="tdValue3 allMoneyTitle">总金额：</td>
+                                        <td class="tdValue4 allMoney" ng-bind="'￥'+cusInfo.quotedMoney"></td>
+                                        <td class="btn_detail" rowspan="4"><a class="detail_link" ng-href="{{myVar}}?cusInfo={{cusInfo.id}}">详情</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdValue3 recMoneyTitle">已收款：</td>
+                                        <td class="tdValue4 recMoney"  ng-bind="'￥'+cusInfo.receivedMoney"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdValue3 time">测量时间：</td>
+                                        <td class="tdValue4 time"  ng-bind="cusInfo.measureTime"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdValue3 time">创建时间：</td>
+                                        <td class="tdValue4 time" ng-bind="cusInfo.createTime"></td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <input type="radio" name="tabs" id="tab2" />
+                        <label for="tab2">跟单记录</label>
+                        <div id="tab-content2" class="tab-content">
+                            <div class="container-fluid" id="content2">
+                                <div class="table1"  id="contract_tab3" ng-repeat="followStatus in followStatus_List">
+                                    <p ng-bind="followStatus.remark"></p>
+                                    <div class="img-container">
+                                        <img src="{{picUrl}}" ng-repeat="picUrl in followStatus.picUrlAry track by $index">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!--二级菜单-->
+                <!--<div class="container-fluid" id="content1">-->
+                    <!--<table class="table1"  id="contract_tab2" ng-repeat="cusInfo in cusInfo_List">-->
+                        <!--<tr>-->
+                            <!--<td class="tdName3" rowspan="4">-->
+                                <!--<div class="img-container">-->
+                                    <!--<img src="">-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="tdValue3 allMoneyTitle">总金额：</td>-->
+                            <!--<td class="tdValue4 allMoney" ng-bind="cusInfo.quotedMoney"></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td class="tdValue3 recMoneyTitle">已收款：</td>-->
+                            <!--<td class="tdValue4 recMoney" ng-bind="cusInfo.receivedMoney"></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td class="tdValue3 time">测量时间：</td>-->
+                            <!--<td class="tdValue4 time" ng-bind="cusInfo.measureTime"></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td class="tdValue3 time">创建时间：</td>-->
+                            <!--<td class="tdValue4 time" ng-bind="cusInfo.createTime"></td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+
+
+                <!--</div>-->
+                <!--<div class="container-fluid" id="content2">-->
+                    <!--<div class="table1"  id="contract_tab3" ng-repeat="record in followStatus_List">-->
+                        <!--<p ng-bind="record.remark"></p>-->
+                        <!--<div class="img-container">-->
+                            <!--<img src="" alt="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+
+</section>
+</body>
+</html>

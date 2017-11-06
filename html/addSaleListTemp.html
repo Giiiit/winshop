@@ -1,0 +1,118 @@
+<div id="modal_addSaleList">
+    <form>
+        <table>
+            <thead>
+            <!--<button type="button"-->
+            <!--style="color: #727e8a; margin-top: -10px;">-->
+            <!--<span class="fa fa-close"></span>-->
+            <!--</button>-->
+            <div id="myModalLabel">
+                <p style="font-size: 16px;">
+                    添加订单
+                </p>
+            </div>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td class="tab_head">货品名称：</td>
+                <td><input type="text" required="required" ng-model="cpName"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">单价：</td>
+                <td><input type="text" required="required" ng-model="unitPrice"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">数量：</td>
+                <td><input type="text" required="required" ng-model="num"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">厂商：</td>
+                <td><input type="text" required="required" ng-model="factoryName"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">型号：</td>
+                <td><input type="text" required="required" ng-model="typeCode"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">类型：</td>
+                <td><input type="text" required="required" ng-model="typeName"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">地址：</td>
+                <td><input type="text" required="required" ng-model="address"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">备注：</td>
+                <td><input type="text" required="required" ng-model="remark"></td>
+            </tr>
+            </tbody>
+
+            <!--<tfoot>-->
+
+            <!--</tfoot>-->
+        </table>
+        <div class="addBtn">
+            <input type="submit" ng-click="add_saleList(cpName, unitPrice, num, factoryName, typeCode, typeName, address,remark)" class="btn" value="添加订单"/>
+        </div>
+    </form>
+
+</div>
+
+
+
+
+<!--<div class="fade" id="add_saleModal" style="width: 460px;margin: 0;">-->
+    <!--<div class="modal-dialog add_modal" style="margin-top: 0;">-->
+        <!--&lt;!&ndash;<div class="modal-content" style="width: 460px;margin: 0;">&ndash;&gt;-->
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close"-->
+                        <!--data-dismiss="modal" aria-hidden="true"  style="color: #727e8a; margin-top: -10px;">-->
+                    <!--<span class="fa fa-close"></span>-->
+                <!--</button>-->
+                <!--<p class="modal-title" id="myModalLabel" style="font-size: 16px; margin-top: -10px;">-->
+                    <!--添加订单-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--<form id="addContract" class="modal-body">-->
+                <!--<table>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">货品名称：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">单价：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">数量：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">厂商：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">型号：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">类型：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">地址：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">备注：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+                <!--<div class="modal-footer">-->
+                    <!--<input type="submit" class="btn" value="添加订单"/>-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--&lt;!&ndash;</div>&lt;!&ndash; /.modal-content &ndash;&gt;&ndash;&gt;-->
+    <!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+<!--</div>-->

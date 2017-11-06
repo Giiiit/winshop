@@ -1,0 +1,19 @@
+.breadcrumb{
+    background-color: transparent;
+    width: 1190px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+.breadcrumb>li>a{
+    color: #e43c59;
+    text-decoration: none;
+    height: 35px;
+    line-height: 35px;
+}
+
+.bread-content{
+    background-color: #edeef2;
+    width: 100%;
+    height: 52px;
+}
+/******** 面包屑导航 END ***********/

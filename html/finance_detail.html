@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../styles/lib/bootstrap.css"/>
+    <link rel="stylesheet" href="../styles/lib/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../styles/define/define_param.css"/>
+    <link rel="stylesheet" href="../styles/define/navbar.css"/>
+    <link rel="stylesheet" href="../styles/define/contract_list.css"/>
+    <link rel="stylesheet" href="../styles/define/customer_detail.css"/>
+    <link rel="stylesheet" href="../styles/define/clock.css"/>
+    <link rel="stylesheet" href="../styles/define/finance.css"/>
+    <link rel="stylesheet" href="../styles/define/breadcrumb.css"/>
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/lib/angular-route.min.js"></script>
+    <title>直赢店</title>
+</head>
+<body>
+<nav class="navbar" role="navigation">
+    <div id="nav-content">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand"><img src="../images/logo2.png" alt="直赢店"></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <!--<li><a href="contract_list.html"><img src="" alt="">合同</a></li>-->
+                <!--<li><a href="customer_list.html"><img src="" alt="">客户</a></li>-->
+                <!--<li><a href="finance_list.html" id="thisclass"><img src="" alt="">财务</a></li>-->
+                <!--<li><a href="clock.html"><img src="" alt="">闹钟</a></li>-->
+
+                <li><a href="customer_list.html"><span class="fa fa-users"> 客户</span></a></li>
+                <li><a href="contract_list.html"><span class="fa fa-clipboard"> 订单</span></a></li>
+                <li><a href="finance_list.html"><span id="thisclass" class="fa fa-cny"> 财务</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+    <!--面包屑导航-->
+    <div class="bread-content">
+        <ol class="breadcrumb">
+            当前位置：
+            <li>财务</li>
+            <li><a href="#">财务详情</a></li>
+        </ol>
+    </div>
+    <div id="fnc_set" class="finance">
+        <div class="center fin_det_top">
+            <div id="card_id">卡号：123423665868</div>
+            <div>今日总收入：<span>￥55555.00</span></div>
+        </div>
+    </div>
+    <div id="clk_list">
+        <table class="clk_item">
+            <tr><td>
+                <div>工行</div>
+                <p class="set_time">单号：<a class="num">NO12423465575654</a></p>
+                <p class="set_time">已收：<a class="rec">+￥40000</a></p>
+            </td></tr>
+            <tr><td>
+                <p class="set_time">单号：</p><p class="set_time">收款：</p>
+            </td></tr>
+            <tr><td>
+                <p class="set_time">单号：</p><p class="set_time">支出：</p>
+            </td></tr>
+        </table>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,91 @@
+#clk_set,#clk_list{
+    width: 1190px;
+    margin: 0 auto;
+}
+#clk_set{
+    margin: 0 auto;
+    border-bottom: 1px solid #d9e3ed;
+}
+#clk_set .doc-dd input{
+    font-size: 20px;
+    width: 264px;
+    height: 48px;
+    padding: 14px 42px;
+    background-color: #edeef2;
+    text-align: center;
+}
+.clk{
+    height: 153px;
+}
+/*#clk_set{*/
+    /*width: 430px;*/
+/*}*/
+#clk_set .left{
+    width: 1080px;
+}
+#clk_set .left p{
+    font-size: 24px;
+    margin: 32px 0;
+    padding-left: 58px;
+}
+/*#clk_set .left button{*/
+    /*font-size: 20px;*/
+    /*padding: 14px 42px;*/
+    /*background-color: #edeef2;*/
+    /*border: none;*/
+/*}*/
+#add_clk {
+    font-size: 16px;
+    padding: 0;
+    margin-top: 0;
+    height: 31px;
+    position: relative;
+    float: right;
+    width: 110px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border-color: #e43c59;
+    color: #e43c59;
+
+}
+#add_clk:hover{
+    color: #e43c59;
+    background-color:#edeef2;
+}
+.fa-plus{
+    color: #e43c59;
+}
+
+#clk_list table{
+    height: 118px;
+    width: 1190px;
+    padding: 30px 20px 21px ;
+    border-bottom: 1px solid #d9e3ed;
+}
+#clk_list p,#clk_list a{
+    font-size: 22px;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+#clk_list .set_time{
+    color: #aebed7;
+    margin-top: 5px;
+}
+
+#addContract .title{
+    height: 150px;
+}
+#addContract tr td.tab_head{
+    height: 18px;
+    padding-top: 0;
+}
+.doc-dd input{
+    color: #727e8a;
+}
+textarea{
+    width: 302px;
+    border-color: #dcdcdc;
+    border-radius: 4px;
+    padding: 5px 17px;
+    font-size: 16px;
+}

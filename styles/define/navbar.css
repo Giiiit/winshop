@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin:0;
+    /*font-family: "Microsoft Yahei";*/
+
+}
+#nav-content{
+    width: 1190px;
+    margin: 0 auto;
+}
+.navbar{
+    background-color: #e43c59;
+    height: 80px;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.navbar-header{
+    position: relative;
+    width: 190px;
+    top: 5px;
+}
+.navbar a{
+    color: #FFFFFF;
+}
+.navbar-brand{
+    height:70px;
+    padding: 0;
+}
+.navbar-nav{
+    margin-top: 34px;
+    width: 800px;
+    float: right;
+}
+.navbar-nav>li>a{
+    padding: 0;
+    width: 105px;
+    height: 45px;
+    margin: 0 15px 0 15px;
+    /*font-family: Microsoft Yahei;*/
+    font-size: 18px;
+}
+.navbar-nav>li>a:hover, #thisclass{
+    background-color: #FFFFFF;
+    color: #e43c59;
+}
+.navbar-nav>li>a>span{
+
+    /*font-family: "Microsoft Yahei";*/
+    width: 105px;
+    height: 45px;
+    padding: 13px 22px 13px 23px;
+    color: #FFFFFF;
+}
+/*.navbar-nav>li>a>span>i{*/
+    /*font-style: normal;*/
+    /*font-family: "Microsoft Yahei";*/
+    /*color: #FFFFFF;*/
+/*}*/
+.navbar-nav>li>a>span:hover{
+    color: #e43c59;
+}
+/*.navbar-nav>li>a>span>i:hover{*/
+    /*font-style: normal;*/
+    /*!*font-family: "Microsoft Yahei";*!*/
+    /*color: #e43c59;*/
+/*}*/
+.navbar-nav .logout{
+    margin-left: 260px;
+    cursor: pointer ;
+}
+
+/*个人中心*/
+
+/******** 导航条 END ***********/
+

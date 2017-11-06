@@ -1,0 +1,74 @@
+<div id="modal_editContract">
+    <form>
+        <table>
+            <thead>
+            <!--<button type="button"-->
+            <!--style="color: #727e8a; margin-top: -10px;">-->
+            <!--<span class="fa fa-close"></span>-->
+            <!--</button>-->
+            <div id="myModalLabel2">
+                <p style="font-size: 16px;">
+                    编辑
+                </p>
+            </div>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td class="tab_head">业务员：</td>
+                <td>
+                    <!--<input type="text" required="required" ng-model="add_seller">-->
+
+                    <select ng-model="salesmanId" ng-change="changefactory(salesmanId)">
+                        <option ng-repeat="option in salesman_list" value="{{option.id}}">
+                            {{option.name}}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="tab_head">总金额：</td>
+                <td><input type="text" required="required" value="{{contractDtl2.quotedMoney}}"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">已收款：</td>
+                <td><input type="text" disabled class="tab_content" value="{{contractDtl2.receivedMoney}}"></td>
+            </tr>
+            <tr>
+                <td class="tab_head">欠款：</td>
+                <td><input type="text" disabled class="tab_content" value="{{contractDtl2.debt}}"></td>
+            </tr>
+            <tr>
+                <td class=""></td>
+                <td class="ck_td">是否结清：<input type="checkbox" checked="" class="ck_clear ck_right"></td>
+            </tr>
+            </tbody>
+
+            <!--<tfoot>-->
+            <!--<input type="submit" ng-click="" class="btn" value="保存" style="margin-right:17px;float: right;display: block;margin-top: -38px;width:50px;height: 24px;font-size: 14px;background-color: #e43c59;color:#FFFFFF;padding: 0;"/>-->
+            <!--</tfoot>-->
+
+            <table class="addMoney_table">
+                <tr class="addMoney_table_content_up">
+                    <td width="50%" align="left">收款：1231</td>
+                    <td width="50%" align="left">现金</td>
+                </tr>
+                <tr class="addMoney_table_content_down">
+                    <td width="50%" colspan="2" align="left">备注::</td>
+                    <td width="50%"></td>
+                </tr>
+                <tr class="addMoney_table_content_down">
+                    <td width="50%" colspan="2" align="right">2016-08-08 22:22</td>
+                    <td width="50%"></td>
+                </tr>
+            </table>
+
+        </table>
+        <div class="addBtn">
+            <input id="btn-left" type="submit" ng-click="" class="btn btn-success" value="追加收款"/>
+            <input type="submit" ng-click="" class="btn btn-right" value="保存"/>
+        </div>
+    </form>
+
+</div>
+

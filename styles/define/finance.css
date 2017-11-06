@@ -1,0 +1,85 @@
+/*财务列表页*/
+.finance{
+    height: 176px;
+}
+.fin_top>div,.fin_top>div>span{
+    font-size: 34px;
+    line-height: 34px;
+    height: 34px;
+    padding-top: 30px;
+}
+.fin_top>div>span{
+    color: #e43c59;
+}
+
+#fnc_set{
+    width: 1190px;
+    margin: 0 auto;
+    border-bottom: 1px solid #d9e3ed;
+}
+#fnc_set .center, #fnc_set .left, #fnc_set .right{
+    float: left;
+    text-align: center;
+}
+#fnc_set .center{
+    width: 400px;
+}
+#fnc_set .left,#fnc_set .right{
+    width: 395px;
+}
+#fnc_set .left>div, #fnc_set .right>div, #fnc_set .left>div>span, #fnc_set .right>div>span{
+    font-size: 30px;
+}
+#fnc_set .right>div>span{
+    color: #00BB00;
+
+}
+.sel-date{
+    width: 1190px;
+    height: 80px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.calendar{
+    border-radius: 4px;
+    margin-top: 0;
+}
+.calendar{
+    background-color: #FFFFFF;
+    width: 55px;
+    height: 41px;
+}
+.form-inline>b{
+    /*display: inline-block;*/
+    /*height: 15px;*/
+    color: #cccccc;
+}
+
+
+/*财务详情页*/
+#card_id{
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+.fin_det_top>div,.fin_det_top>div>span{
+    font-size: 34px;
+    line-height: 34px;
+    height: 34px;
+    padding-top: 18px;
+}
+.fin_det_top>div>span{
+    color: #e43c59;
+}
+#clk_list .num{
+    color: #727e8a;
+}
+#clk_list .rec{
+    color: #e43c59;
+}
+#clk_list div{
+    float: right;
+    font-size: 22px;
+    height: 70px;
+    line-height: 70px;
+    color: #727e8a;
+}

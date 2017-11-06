@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../styles/lib/bootstrap.css"/>
+    <link rel="stylesheet" href="../styles/lib/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../styles/define/define_param.css"/>
+    <link rel="stylesheet" href="../styles/define/navbar.css"/>
+    <link rel="stylesheet" href="../styles/define/contract_list.css"/>
+    <link rel="stylesheet" href="../styles/define/customer_detail.css"/>
+    <link rel="stylesheet" href="../styles/define/clock.css"/>
+    <link rel="stylesheet" href="../styles/define/breadcrumb.css"/>
+    <link rel="stylesheet" href="../styles/define/setClock.css"/>
+    <link rel="stylesheet" href="../styles/define/jquery-ui.css"/>
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/lib/angular-route.min.js"></script>
+    <title>直赢店</title>
+</head>
+<body>
+<nav class="navbar" role="navigation">
+    <div id="nav-content">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand"><img src="../images/logo2.png" alt="直赢店"></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="contract_list.html"><img src="" alt="">合同</a></li>
+                <li><a href="customer_list.html"><img src="" alt="">客户</a></li>
+                <li><a href="finance_list.html"><img src="" alt="">财务</a></li>
+                <li><a href="javascript:void(0)" id="thisclass"><img src="" alt="">闹钟</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+    <!--面包屑导航-->
+    <div class="bread-content">
+        <ol class="breadcrumb">
+            当前位置：
+            <li><a href="#">闹钟</a></li>
+        </ol>
+    </div>
+    <div id="clk_set" class="clk">
+        <div class="left">
+            <p>卡号：123423665868</p>
+            <button id="add_clk" class="btn" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> 添加闹钟</button>
+            <div>
+                <!--<button>开始时间</button> ——-->
+                <!--<button>结束时间</button>-->
+                <div class="doc-dd">
+                    <input name="act_start_time" type="text" class="text-box" value="" placeholder="开始时间" title="开始时间" readonly="readonly" style="cursor:pointer;"/>——
+                    <input name="act_stop_time" type="text" class="text-box" value="" placeholder="结束时间" title="结束时间" readonly="readonly" style="cursor:pointer;"/>
+                </div>
+            </div>
+        </div>
+        <!--<div class="add_clk">-->
+            <!--<button class="btn" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> 添加闹钟</button>-->
+        <!--</div>-->
+    </div>
+    <div id="clk_list">
+        <table class="clk_item">
+            <tr><td><p>提醒厂家生产</p><p class="set_time">2016-05-31 8:30:00</p></td></tr>
+            <tr><td><p>提醒厂家生产</p><p class="set_time">2016-05-31 8:30:00</p></td></tr>
+            <tr><td><p>提醒厂家生产</p><p class="set_time">2016-05-31 8:30:00</p></td></tr>
+            <tr><td><p>提醒厂家生产</p><p class="set_time">2016-05-31 8:30:00</p></td></tr>
+            <tr><td><p>提醒厂家生产</p><p class="set_time">2016-05-31 8:30:00</p></td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true"  style="color: #727e8a; margin-top: -10px;">
+                    <span class="fa fa-close"></span>
+                </button>
+                <p class="modal-title" id="myModalLabel" style="font-size: 16px; margin-top: -10px;">
+                    添加闹钟
+                </p>
+            </div>
+            <form id="addContract" class="modal-body">
+                <table>
+                    <tr>
+                        <td class="tab_head">标题：<br/><br/><br/><br/><br/><br/><br/></td>
+                        <td><textarea rows="5" required="required" placeholder="请输入内容" class="title"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="tab_head">时间：</td>
+                        <td><input name="act_set_time" type="text" class="text-box" value="" placeholder="2016-06-28 16:31" title="设置时间" readonly="readonly" style="cursor:pointer;"/></td>
+                    </tr>
+                </table>
+                <div class="modal-footer">
+                    <input type="submit" class="btn" value="添加闹钟"/>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--End Modal-->
+
+<script src="../js/lib/jquery.min.js"></script>
+<script src="../js/lib/modal.js"></script>
+<script src="../js/lib/bootstrap-dropdown.js"></script>
+<script src="../js/lib/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="../js/lib/jquery-ui-timepicker-addon.js"></script>
+<script src="../js/lib/jquery-ui-timepicker-zh-CN.js"></script>
+<script src="../js/lib/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="../js/controllers/contractList.js"></script>
+
+<script >
+    $( "input[name='act_start_time'],input[name='act_stop_time'],input[name='act_set_time']" ).datetimepicker();
+</script>
+</body>
+</html>

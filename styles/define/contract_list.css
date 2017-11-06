@@ -1,0 +1,164 @@
+*{
+    font-family: "Helvetica Neue","Microsoft Yahei", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #727e8a;
+}
+
+.search{
+    /*border-bottom: 1px solid #d9e3ef;*/
+    height: 94px;
+    width: 1190px;
+    margin: 0 auto;
+    border-bottom: 1px solid #d9e3ed;
+}
+#add-customer{
+    float: left;
+    line-height: 94px;
+    margin-left: 20px;
+}
+#add-customer a{
+    text-decoration: none;
+    color: #e43c59;
+    cursor: pointer;
+}
+#add-customer a strong{
+    color: #e43c59;
+}
+
+/*.input-search, .btn{*/
+    /*border-radius: 20px;*/
+    /*margin-top: 26px;*/
+/*}*/
+/*.btn{*/
+    /*background-color: #e43c59;*/
+    /*width: 55px;*/
+/*}*/
+.input-group{
+    height: 41px;
+    width: 330px;
+}
+.form-control{
+    height: 41px;
+    width: 330px;
+    /*border-color: #e43c59;*/
+    float: right;
+    margin-right: 40px;
+    margin-left: 10px;
+    position: relative;
+}
+.input-group .form-control{
+    z-index: 0;
+}
+.form-inline{
+    width: 710px;
+    margin: 0 auto;
+}
+.fa-search{
+    height: 27px;
+    line-height: 27px;
+    border-color: #e43c59;
+    background-color: #e43c59;
+    color: #FFFFFF;
+}
+.filter{
+    float: right;
+    height: 40px;
+    margin: 35px 15px 0 0;
+}
+.filter a, .filter a span {
+    color: #e43c59;
+    text-decoration: none;
+}
+/******** 合同添加及搜索 END ***********/
+
+.table{
+    width: 1190px;
+    margin: 0 auto;
+    border: none;
+}
+.table tr {
+    border-bottom: 1px solid #d9e3ef;
+    height: 59px;
+}
+.status{
+    padding: 50px;
+}
+
+.customer_table{width:1190px;margin: 15px auto 0;}
+.customer_table_content_down{border-bottom: 1px solid #d9e3ed;}
+.customer_table_content_down td span{margin-left:22%}
+.customer_table_content_up,.customer_table_content_down{height:35px;}
+
+.customer_table_content_up td>span{
+    color: #e43c59;
+}
+.ck_clear{
+    width: 14px;
+    height: 14px;
+}
+hr{
+    width: 1190px;
+    margin: 0 auto 10px;
+}
+.red_e59{
+    color: #e43c59;
+}
+/*模态框*/
+.add_modal{
+    width: 460px;
+    margin: 20% auto 0;
+}
+.modal-header{
+    height:30px;
+    background-color: #f3f3f3;
+    color: #727e8a;
+    border-bottom: 1px solid #e5e5e5;
+}
+.modal-body table{
+    margin: 35px auto;
+}
+.modal-body table tr td input, .modal-body table tr td select{
+    width: 302px;
+    height: 31px;
+    line-height: 16px;
+    font-size: 16px;
+    margin-bottom: 7px;
+    border:1px solid #dcdcdc;
+    border-radius: 2px;
+    padding:0 17px;
+}
+.modal-body  table tr td.tab_head{
+    text-align: right;
+    font-size: 16px;
+    height: 31px;
+    width: 80px;
+    margin-bottom: 7px;
+    padding-top: 0;
+}
+.modal-footer{
+    height:35px;
+    background-color: #f3f3f3;
+    border-top: none;
+}
+.modal-footer .btn{
+    margin-top: -23px;
+    margin-right: 26px;
+    padding-top: 2px;
+    width: 92px;
+    height:26px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+#addContract, #addCustomer{
+    padding: 0;
+}
+
+/*Modal End*/
+
+.dropdown-menu .divider{
+    margin: 3px 0;
+}
+.dropdown-menu>li>a {
+    color: #727e8a;
+}

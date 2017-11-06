@@ -1,0 +1,113 @@
+<div id='modal-print_contract'
+     class="container-fluid">
+
+    <div class="row mt20" style="width:800px;">
+
+        <div class="col-md-4">
+            <form class="form-inline">
+                <label>合同号：</label>
+                {{contract.contractCode}}
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <form class="form-inline">
+                <label>客户名称：</label>
+                {{contract.customerName}}
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <form class="form-inline">
+                <label>业务员：</label>
+                {{salesman_name}}
+            </form>
+        </div>
+
+    </div>
+
+    <div class="row mt20" style="width:800px;">
+
+        <div class="col-md-4">
+            <form class="form-inline">
+                <label>订金：</label>
+                {{contract.bookMoney}}
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <form class="form-inline">
+                <label>财务状态：</label>
+                {{contract.moneyStatusName}}
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <form class="form-inline">
+                <label>备注：</label>
+                {{contract.remark}}
+            </form>
+        </div>
+
+    </div>
+
+    <div class="row mt20" style="width:800px;">
+
+        <div class="col-md-4">
+            <form class="form-inline">
+                <label>预计测量时间：</label>
+                {{contract.estimateMeasureTime}}
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <form class="form-inline">
+                <label>预计安装时间：</label>
+                {{contract.estimateInstallTime}}
+            </form>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="content-container">
+
+        <table id="temp_table" class="table table-bordered">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>厂商</th>
+                <th>类型</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>型号</th>
+                <th>地址</th>
+                <th>备注</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="order in order_list">
+                <td>{{order.cpName}}</td>
+                <td>{{order.factoryName}}</td>
+                <td>{{order.parentTypeName ? order.parentTypeName+'--'+order.typeName : order.typeName}}</td>
+                <td>{{order.unitPrice}}</td>
+                <td>{{order.num}}</td>
+                <td>{{order.typeCode}}</td>
+                <td>{{order.address}}</td>
+                <td>{{order.remark}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="button-container text-center">
+
+        <button type="button" class="btn btn-default print"
+                ng-click="print()"><i class="fa fa-print"></i> 确定
+        </button>
+
+    </div>
+
+</div>

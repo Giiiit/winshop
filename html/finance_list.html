@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../styles/lib/bootstrap.css"/>
+    <link rel="stylesheet" href="../styles/lib/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../styles/define/define_param.css"/>
+    <link rel="stylesheet" href="../styles/define/navbar.css"/>
+    <link rel="stylesheet" href="../styles/define/contract_list.css"/>
+    <link rel="stylesheet" href="../styles/define/customer_detail.css"/>
+    <link rel="stylesheet" href="../styles/define/clock.css"/>
+    <link rel="stylesheet" href="../styles/define/finance.css"/>
+    <link rel="stylesheet" href="../styles/define/breadcrumb.css"/>
+    <script src="../js/lib/angular.js"></script>
+    <script src="../js/lib/angular-route.min.js"></script>
+    <script src="../js/lib/ui-bootstrap-tpls.js"></script>
+    <script src="../js/lib/angular-cookies.js"></script>
+    <script src="../js/controllers/financeList.js"></script>
+    <script src="../js/service/configure.js"></script>
+    <!--<script src="../js/service/customer.js"></script>-->
+    <!--<script src="../js/service/contract.js"></script>-->
+    <script src="../js/service/finance.js"></script>
+    <script src="../js/service/login.js"></script>
+    <title>直赢店</title>
+</head>
+<body ng-app="financeList"  ng-controller="financeListController">
+<nav class="navbar" role="navigation">
+    <div id="nav-content">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand"><img src="../images/logo2.png" alt="直赢店"></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <!--<li><a href="contract_list.html"><img src="" alt="">合同</a></li>-->
+                <!--<li><a href="customer_list.html"><img src="" alt="">客户</a></li>-->
+                <!--<li><a href="javascript:void(0)" id="thisclass"><img src="" alt="">财务</a></li>-->
+                <!--<li><a href="clock.html"><img src="" alt="">闹钟</a></li>-->
+
+                <li><a href="customer_list.html"><span class="fa fa-users">&nbsp;客户</span></a></li>
+                <li><a href="contract_list.html"><span class="fa fa-clipboard">&nbsp;订单</span></a></li>
+                <li><a href="javascript:void(0)"><span id="thisclass" class="fa fa-cny">&nbsp;财务</span></a></li>
+                <li class="logout"><a ng-click="loginOut()"><span class="fa fa-user">&nbsp;退出</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+    <!--面包屑导航-->
+    <div class="bread-content">
+        <ol class="breadcrumb">
+            当前位置：
+            <li><a>财务</a></li>
+        </ol>
+    </div>
+    <div id="fnc_set" class="finance">
+        <div class="sel-date">
+            <div>
+                <div class="form-inline">
+
+                    <p class="input-group">
+                        <input id="stDate" type="text" class="form-control" uib-datepicker-popup
+                           ng-model="startDate" is-open="opened_1"
+                           datepicker-options="date_options" ng-required="true" close-text="关闭"
+                            readonly="readonly" placeholder="开始时间" style="background-color: #fff;"  ng-click="opened_1=!opened_1"/>
+                        <span id="edDate" class="input-group-btn">
+                            <button type="button" class="btn btn-default calendar" ng-click="opened_1=!opened_1">
+                                <i class="fa fa-calendar fa-2x"></i></button>
+                        </span>
+                    </p>
+
+                    <b>——</b>
+
+                    <p class="input-group">
+                        <input type="text" class="form-control" uib-datepicker-popup
+                           ng-model="endDate" is-open="opened_2"
+                           datepicker-options="date_options" ng-required="true" close-text="关闭"
+                            readonly="readonly" placeholder="结束时间" style="background-color: #fff;"  ng-click="opened_2=!opened_2"
+                            ng-change="getFinanceListByIntervalTime(startDate,endDate)"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default calendar" ng-click="opened_2=!opened_2">
+                                <i class="fa fa-calendar fa-2x"></i></button>
+                        </span>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="left fin_top">
+            <div>总收入：<span ng-bind="'￥'+fce_title.totalIncome"></span></div>
+        </div>
+        <div class="center fin_top">
+            <div>总金额：<span ng-bind="'￥'+fce_title.totalQuotedMoney"></span></div>
+        </div>
+        <div class="right fin_top">
+            <div>总欠款：<span ng-bind="'￥'+fce_title.totalDebt"></span></div>
+        </div>
+    </div>
+    <div id="clk_list">
+        <!--<table class="clk_item" ng-repeat="fceItem in fce_list">-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<div ng-bind="fceItem.accountName"></div>-->
+                    <!--<div ng-bind="fceItem.address"></div>-->
+                    <!--<p class=""><a href="" class="num" ng-bind="'单号：'+fceItem.salesManName"></a></p>-->
+                    <!--<p class=""><a class="rec" ng-bind="'已收：￥'+fceItem.income"></a></p>-->
+                <!--</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+        <table class="customer_table" ng-repeat="fceItem in fce_list">
+            <tr class="customer_table_content_up">
+                <td width="33%" align="left" ng-bind="fceItem.customerName"></td>
+                <td width="17%" align="center">收入：<span ng-bind="'￥'+fceItem.income"></span></td>
+                <td width="50%" align="right" ng-bind="fceItem.createTime"></td>
+            </tr>
+            <tr class="customer_table_content_down">
+                <td width="33%" align="left"  ng-bind="'银行名称：'+fceItem.accountName"></td>
+                <td width="17%" align="center" ng-bind="'业务员：'+fceItem.salesManName"></td>
+                <td width="50%" align="right"  ng-bind="fceItem.customerAddress"></td>
+            </tr>
+        </table>
+    </div>
+</section>
+</body>
+</html>

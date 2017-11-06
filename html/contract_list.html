@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../styles/lib/bootstrap.css"/>
+    <link rel="stylesheet" href="../styles/lib/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../styles/define/define_param.css"/>
+    <link rel="stylesheet" href="../styles/define/navbar.css"/>
+    <link rel="stylesheet" href="../styles/define/contract_list.css"/>
+    <link rel="stylesheet" href="../styles/define/customer_detail.css"/>
+    <link rel="stylesheet" href="../styles/define/contract_detail.css"/>
+    <link rel="stylesheet" href="../styles/define/breadcrumb.css"/>
+    <script src="../js/lib/angular.js"></script>
+    <script src="../js/lib/angular-route.min.js"></script>
+    <script src="../js/lib/ui-bootstrap-tpls.js"></script>
+    <script src="../js/controllers/contractList.js"></script>
+    <script src="../js/lib/angular-cookies.js"></script>
+    <script src="../js/service/configure.js"></script>
+    <script src="../js/service/customer.js"></script>
+    <script src="../js/service/contract.js"></script>
+    <script src="../js/service/login.js"></script>
+
+    <title>直赢店</title>
+
+</head>
+<body ng-app="contractList" ng-controller="contractListController">
+<nav class="navbar" role="navigation">
+    <div id="nav-content">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand"><img src="../images/logo2.png" alt="直赢店"></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="customer_list.html"><span class="fa fa-users">&nbsp;客户</span></a></li>
+                <li><a href="javascript:void(0)"><span id="thisclass" class="fa fa-clipboard">&nbsp;订单</span></a></li>
+                <li><a href="finance_list.html"><span class="fa fa-cny">&nbsp;财务</span></a></li>
+                <li class="logout"><a ng-click="loginOut()"><span class="fa fa-user">&nbsp;退出</span></a></li>
+                <!--<li><a href="clock.html"><span class="fa fa-bell"></span> 闹钟</a></li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+    <!--面包屑导航-->
+    <div class="bread-content">
+        <ol class="breadcrumb">
+            当前位置：
+            <li><a>订单</a></li>
+        </ol>
+    </div>
+
+    <!--合同页顶部-->
+    <!--<div class="search"  ng-controller="AddContractController">-->
+        <!--<div id="add-customer">-->
+            <!--<a ng-click="add_contractModal()"><strong>+</strong> 添加合同</a>-->
+        <!--</div>-->
+        <!--<div class="filter dropdown">-->
+            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-filter"></span> 筛选</a>-->
+                <!--<ul class="dropdown-menu">-->
+                    <!--<li><a href="#">客户</a></li>-->
+                    <!--&lt;!&ndash;<li class="divider"></li>&ndash;&gt;-->
+                    <!--<li><a href="#">业务员</a></li>-->
+                    <!--&lt;!&ndash;<li class="divider"></li>&ndash;&gt;-->
+                    <!--<li><a href="#">电话</a></li>-->
+                    <!--&lt;!&ndash;<li class="divider"></li>&ndash;&gt;-->
+                    <!--<li><a href="#">交易科目</a></li>-->
+                <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="input-group">-->
+            <!--<input type="search" class="form-control input-search" placeholder="请输入关键字">-->
+            <!--<span class="input-group-btn">-->
+                <!--<button class="btn" type="button"><span class="fa fa-search fa-lg"></span></button>-->
+            <!--</span>-->
+        <!--</div>-->
+    </div>
+
+    <!--合同页列表-->
+    <div id="contract_list" class="container-fluid">
+
+        <table class="customer_table" ng-repeat="contract in contract_list">
+            <tr class="customer_table_content_up">
+                <td width="33%" align="center"><a href="contract_detail.html?contract={{contract.id}}" ng-bind="contract.customerName"></a></td>
+                <td width="33%" align="center" class="red_e59" ng-bind="'￥'+contract.receivedMoney"></td>
+                <td width="34%" align="right" ng-bind="contract.createTime"></td>
+            </tr>
+            <tr class="customer_table_content_down">
+                <td width="33%" align="center"  ng-bind="contract.salesmanName"><span></span></td>
+                <td width="33%" align="center" ng-bind="contract.customerAddress"></td>
+                <td width="34%" align="right">是否结清：<input class="ck_clear" type="checkbox" checked="{{contract.isClear}}" disabled/></td>
+            </tr>
+        </table>
+
+    </div>
+</section>
+
+<!--<div class="contract_listItem" ng-repeat="contract in contract_list">
+    <a href="contract_detail.html" ng-bind="contract.name"></a>
+    <div class="tel" ng-bind="contract.phone"></div>
+    <div class="seller" ng-bind="contract.salesmanName"></div>
+    <div class="state" ng-bind="contract.recentContractProcess"></div>
+    <div class="addr" ng-bind="contract.address"></div>
+</div>-->
+
+
+<!-- 模态框（Modal） -->
+<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog"-->
+     <!--aria-labelledby="myModalLabel" aria-hidden="true">-->
+    <!--<div class="modal-dialog add_modal">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close"-->
+                        <!--data-dismiss="modal" aria-hidden="true"  style="color: #727e8a; margin-top: -10px;">-->
+                    <!--<span class="fa fa-close"></span>-->
+                <!--</button>-->
+                <!--<p class="modal-title" id="myModalLabel" style="font-size: 16px; margin-top: -10px;">-->
+                    <!--添加合同-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--<form id="addContract" class="modal-body">-->
+                <!--<table>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">客户：</td>-->
+                        <!--<td>-->
+                            <!--&lt;!&ndash;<input type="text" required="required" ng-model="add_customer">&ndash;&gt;-->
+                            <!--<select class="form-control" ng-model="customerId" ng-change="changefactory(customerId)">-->
+                                <!--<option ng-repeat="option in customer_list" value="{{option.id}}">-->
+                                    <!--{{option.name}}-->
+                                <!--</option>-->
+                            <!--</select>-->
+
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">业务员：</td>-->
+                        <!--<td>-->
+                            <!--&lt;!&ndash;<input type="text" required="required" ng-model="add_seller">&ndash;&gt;-->
+
+                            <!--<select class="form-control" ng-model="salesmanId" ng-change="changefactory(salesmanId)">-->
+                                <!--<option ng-repeat="option in salesman_list" value="{{option.id}}">-->
+                                    <!--{{option.name}}-->
+                                <!--</option>-->
+                            <!--</select>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">选择账号：</td>-->
+                        <!--<td>-->
+                            <!--&lt;!&ndash;<input type="text" required="required" ng-model="add_account">&ndash;&gt;-->
+
+                            <!--<select class="form-control" ng-model="accountId" ng-change="changefactory(accountId)">-->
+                                <!--<option ng-repeat="option in account_list" value="{{option.id}}">-->
+                                    <!--{{option.name}}-->
+                                <!--</option>-->
+                            <!--</select>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">合同金额：</td>-->
+                        <!--<td><input type="text" required="required" ng-model="quotedMoney"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">收入：</td>-->
+                        <!--<td><input type="text" required="required" ng-model="income"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">支出：</td>-->
+                        <!--<td><input type="text" required="required" ng-model="expense"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">定金：</td>-->
+                        <!--<td><input type="text" required="required" ng-model="bookMoney"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="tab_head">交易科目：</td>-->
+                        <!--<td><input type="text" required="required"></td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+                <!--<div class="modal-footer">-->
+                    <!--<input type="submit" ng-click="add_contract(customerId,salesmanId,accountId,quotedMoney,income,expense,bookMoney)" class="btn" value="添加合同"/>-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
+    <!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+<!--</div>-->
+<!--End Modal-->
+
+<script src="../js/lib/jquery.min.js"></script>
+<script src="../js/lib/modal.js"></script>
+<script src="../js/lib/bootstrap-dropdown.js"></script>
+
+<!--<script>-->
+     <!--$(document).ready(function () {-->
+         <!--$('.dropdown-toggle').dropdown();-->
+     <!--});-->
+<!--</script>-->
+</body>
+</html>

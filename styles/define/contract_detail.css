@@ -1,0 +1,171 @@
+ button.print{
+    margin-top:0;float: left;border-radius: 4px;background-color: #ffffff;width: 70px;
+}
+ .button-container{
+     width: 878px;
+     height:34px;
+ }
+ .button-container>button{
+     margin: 15px 404px 0;
+ }
+/*button.print:hover{*/
+    /*color: #e43c59;*/
+/*}*/
+/*.fa-print{*/
+    /*color: #e43c59;*/
+/*}*/
+
+
+ /*.modal-dialog{*/
+     /*width: 898px;*/
+     /*padding:15px;*/
+ /*}*/
+ .form-inline, .form-inline label, .content-container table thead th, .content-container table tbody tr td{
+     font-size: 14px;
+ }
+ /*.content-container table{*/
+     /*border: 1px solid ;*/
+ /*}*/
+
+ .add_container{
+     width:1190px;
+     margin: 0 auto;
+ }
+ #add_saleList {
+     font-size: 16px;
+     padding: 0;
+     margin: 0 0 20px 17px;
+     height: 31px;
+     width: 110px;
+     border-radius: 4px;
+     background-color: #ffffff;
+     border-color: #e43c59;
+     color: #e43c59;
+
+ }
+ #add_saleList:hover{
+     color: #e43c59;
+     background-color:#edeef2;
+ }
+ .fa-plus{
+     color: #e43c59;
+ }
+
+ #modal-print_contract{
+     padding: 10px;
+ }
+#temp_table{
+    width: 878px;
+}
+#temp_table tr{
+    height:40px;
+}
+
+#modal_addSaleList, #modal_addContract{
+    width: 598px;
+    margin: 0 auto;
+}
+#myModalLabel, #myModalLabel2{
+    height:30px;
+    background-color: #f3f3f3;
+    color: #727e8a;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+    border-radius: 5px 5px 0 0;
+}
+#myModalLabel p, #myModalLabel2 p{
+    padding: 4px 17px;
+}
+ .addBtn{
+     height:35px;
+     background-color: #f3f3f3;
+     border-top: none;
+     margin-top: 20px;
+     border-radius: 0 0 5px 5px;
+ }
+ .addBtn .btn{
+     margin-top: 5px;
+     margin-right: 26px;
+     padding-top: 2px;
+     width: 92px;
+     height:26px;
+     float: right;
+     font-size: 14px;
+     border-radius: 4px;
+     background-color: #e43c59;
+     color: #FFFFFF;
+ }
+ .addBtn .btn-right{
+     background-color: #e43c59;
+ }
+ .addBtn #btn-left{
+     margin-top: 5px;
+     margin-left: 26px;
+     padding-top: 2px;
+     width: 92px;
+     height:26px;
+     float: left;
+     font-size: 14px;
+     border-radius: 4px;
+     background-color: #449d44;
+     color: #FFFFFF;
+ }
+tbody{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+ tbody tr td input, tbody tr td select{
+     width: 418px;
+     height: 31px;
+     line-height: 16px;
+     font-size: 16px;
+     margin-bottom: 7px;
+     border:1px solid #dcdcdc;
+     border-radius: 2px;
+     padding:0 17px;
+ }
+
+ tbody tr td.tab_head{
+     text-align: right;
+     font-size: 16px;
+     height: 31px;
+     width: 100px;
+     margin-bottom: 7px;
+     padding-top: 0;
+ }
+ tbody tr td.tab_check{
+     text-align: right;
+     font-size: 16px;
+     height: 31px;
+     width: 300px;
+     margin-bottom: 7px;
+     padding-top: 0;
+ }
+ .tab_content{
+     font-size: 16px;
+     background-color: #FFFFFF;
+     cursor: all-scroll;
+ }
+ .ck_right{
+     float: right;
+ }
+ .ck_td{
+     padding-right: 300px;
+ }
+.tdName{
+    width:120px;
+    text-align: right;
+}
+.tdValue{
+    width: 475px;
+    text-align: left;
+}
+
+ .addMoney_table{width:520px;margin: 15px auto 0;padding: 0 10px;}
+ .addMoney_table_content_up{border-top: 1px solid #d9e3ed;}
+ .addMoney_table_content_down td span{margin-left:22%}
+ .addMoney_table_content_up,.addMoney_table_content_down{height:35px;}
+
+ .addMoney_table_content_up td>span{
+     color: #e43c59;
+ }
